@@ -3,8 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,6 +16,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  min-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +29,139 @@
   color: #61dafb;
 }
 
+.ui.input {
+  margin: 20px 0;
+}
+
+.header {
+  margin: 0 0 8vh 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.footer {
+  margin: 10vh 0 10vh 0;
+}
+.container {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+}
+.userInput {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100vw - 1100px);
+}
+.userInput p,
+.input-once {
+  text-align: start;
+}
+
+.userInput p {
+  margin: 0 !important;
+  font-size: 28px;
+}
+
+.ui.input {
+  display: contents !important;
+}
+.ui.input > input {
+  max-width: 300px !important;
+  margin: 20px 40px 20px 0 !important;
+  padding: 10px 25px !important;
+}
+
+.ui.input.second-input > input {
+  margin: 20px 40px 20px 40px !important;
+}
+
+.input-box {
+  margin: 0 0 20px 0;
+}
+
+.input-flex {
+  display: flex;
+  align-items: center;
+}
+
+#canvasBottom,
+#canvasTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sign-div {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.sign-div canvas {
+  margin-right: 40px;
+}
+
+.generate-button {
+  display: flex !important;
+  margin: 40px auto !important;
+  width: 100%;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  font-size: 1.5rem !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1740px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .userInput {
+    display: flex;
+    flex-direction: column;
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0 20px;
+  }
+  .userInput p,
+  .input-once {
+    text-align: start;
+  }
+
+  .userInput p {
+    margin: 0 !important;
+    font-size: 28px;
+  }
+
+  .ui.input {
+    display: contents !important;
+  }
+  .ui.input > input {
+    margin: 20px 40px 20px 0 !important;
+  }
+
+  .ui.input.second-input > input {
+    margin: 20px 40px 20px 40px !important;
+  }
+
+  .input-box {
+    margin: 0 0 20px 0;
+  }
+
+  .input-flex {
+    display: flex;
+    align-items: center;
   }
 }
