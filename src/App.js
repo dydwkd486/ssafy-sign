@@ -19,10 +19,10 @@ function App() {
       <div className="footer">
         
         <p>&copy;  SSAFY 5기 서울캠퍼스 최동욱</p>
-        <p>문의사항 / 버그 : cheal3@naver.com</p>        
+        {/* <p><del>문의사항 / 버그 : cheal3@naver.com</del></p>         */}
 
         <p>수정자 : SSAFY 8기 서울캠퍼스 조용장</p>
-
+        <p>문의사항 / 버그 : dydwkd48670@gmail.com</p>
       </div>
 
 
