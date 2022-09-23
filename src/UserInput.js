@@ -8,7 +8,7 @@ const UserInput = (props) => {
   const [image, setImage] = useState();
   const canvasRef = useRef();
   const [totalcost, setTotalcost] = useState(0);
-  const [totalDaysCost, setTotalDaysCost] = useState(0);
+  const [totalDaysCost, setTotalDaysCost] = useState(props.inputs.totalDays);
   const [attendDaysCost, setAttendDaysCost] = useState(0);
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -43,11 +43,11 @@ const UserInput = (props) => {
     }
     if(attendDaysCost!=0 && totalDaysCost!=0){
       if(name == "totalDays"){
-        setTotalcost(((attendDaysCost*(10000/value)).toFixed(0)*100+50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+        setTotalcost(((attendDaysCost*(10000/value)).toFixed(0)*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 
       }
       if(name == "attendDays"){
-        setTotalcost(((value*(10000/totalDaysCost)).toFixed(0)*100+50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+        setTotalcost(((value*(10000/totalDaysCost)).toFixed(0)*100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
         
       }
       console.log(totalcost)
