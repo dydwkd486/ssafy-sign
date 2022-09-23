@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ssafy-sign/static/css/main.797a7539.css",
-    "main.js": "/ssafy-sign/static/js/main.01fb885a.js",
+    "main.js": "/ssafy-sign/static/js/main.67d11764.js",
     "static/media/지원금3.png": "/ssafy-sign/static/media/지원금3.bd42ece4eb6487b7535e.png",
     "static/media/logo.svg": "/ssafy-sign/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/사인칸.PNG": "/ssafy-sign/static/media/사인칸.5e90d7a2f717cd11e4a7.PNG",
     "index.html": "/ssafy-sign/index.html",
     "main.797a7539.css.map": "/ssafy-sign/static/css/main.797a7539.css.map",
-    "main.01fb885a.js.map": "/ssafy-sign/static/js/main.01fb885a.js.map"
+    "main.67d11764.js.map": "/ssafy-sign/static/js/main.67d11764.js.map"
   },
   "entrypoints": [
     "static/css/main.797a7539.css",
-    "static/js/main.01fb885a.js"
+    "static/js/main.67d11764.js"
   ]
 }
