@@ -7,7 +7,9 @@ const UserInput = (props) => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [image, setImage] = useState();
   const canvasRef = useRef();
-
+  const [totalcost, setTotalcost] = useState(0);
+  const [totalDaysCost, setTotalDaysCost] = useState(0);
+  const [attendDaysCost, setAttendDaysCost] = useState(0);
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -27,10 +29,29 @@ const UserInput = (props) => {
 
   const onChange = (e) => {
     const { value, name } = e.target
+    
     props.setInputs({
       ...props.inputs,
       [name]: value
     })
+    console.log(value)
+    if(name == "totalDays"){
+      setTotalDaysCost(value);
+    }
+    if(name == "attendDays"){
+      setAttendDaysCost(value);
+    }
+    if(attendDaysCost!=0 && totalDaysCost!=0){
+      if(name == "totalDays"){
+        setTotalcost(((attendDaysCost*(10000/value)).toFixed(0)*100+50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+
+      }
+      if(name == "attendDays"){
+        setTotalcost(((value*(10000/totalDaysCost)).toFixed(0)*100+50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+        
+      }
+      console.log(totalcost)
+    }
 
   }
 
@@ -99,11 +120,16 @@ const UserInput = (props) => {
         </div>
       </div>
       <div className="input-box">
-        <p>총 출석일 / 총 수업일</p>
+        <p>총 출석일 / 총 수업일</p>  
         <div className="input-flex">
           <Input size='mini' name="attendDays" onChange={onChange} placeholder="총 출석일" />
           <span>/</span>
           <Input size='mini' name="totalDays" onChange={onChange} placeholder="총 수업일" className="second-input" defaultValue={props.inputs.totalDays} />
+        </div>
+        <div>
+          <p style={{fontSize: '18px', color: 'grey' }}>
+            예상 지원금 금액 : {totalcost} 원
+          </p>
         </div>
       </div>
 
