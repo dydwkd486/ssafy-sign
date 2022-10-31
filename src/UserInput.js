@@ -87,6 +87,11 @@ const UserInput = (props) => {
       ctx.moveTo(offsetX, offsetY);
 
       }
+    setImage(canvasRef.current.toDataURL())
+    props.setInputs({
+      ...props.inputs,
+      sign: image
+    })
 
   }
 
@@ -111,6 +116,11 @@ const UserInput = (props) => {
 
       }
     }
+    setImage(canvasRef.current.toDataURL())
+    props.setInputs({
+      ...props.inputs,
+      sign: image
+    })
 
   }
 
@@ -153,6 +163,7 @@ const UserInput = (props) => {
           <Input size='mini' name="attendDays" onChange={onChange} placeholder="총 출석일" />
           <span>/</span>
           <Input size='mini' name="totalDays" onChange={onChange} placeholder="총 수업일" className="second-input" defaultValue={props.inputs.totalDays} />
+          
         </div>
         <div>
           <p style={{fontSize: '18px', color: 'grey' }}>

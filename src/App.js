@@ -16,7 +16,8 @@ function App() {
       </div>
 
       <Container />
-
+      <p>현재 모바일은 크롬,삼성인터넷에서 잘 됩니다.</p>
+      <p>카카오톡으로 접속시 불안정합니다.</p>
       <div className="footer">
       
         <p>&copy;  SSAFY 5기 서울캠퍼스 최동욱</p>

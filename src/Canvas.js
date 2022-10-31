@@ -196,7 +196,7 @@ const Canvas = (props) => {
           onClick={toImage}
           className="generate-button"
         >생성하기</Button>}
-        style={{ width: '90%' }}
+        style={{ width: '90%',maxWidth:'1070px' }}
       >
         <Modal.Header style={{ backgroundColor: '#f9fafb' }}> 미리 보기</Modal.Header>
         <Modal.Content image scrolling>
