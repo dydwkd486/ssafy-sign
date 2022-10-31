@@ -71,11 +71,36 @@ const UserInput = (props) => {
 
   const startDraw = (event) => {
     event.persist();
+    
+    if(event.targetTouches){
+      const rect = event.target.getBoundingClientRect();
+      var offsetX = (event.touches[0].clientX - rect.left) 
+      var offsetY = (event.touches[0].clientY - rect.top)
+      
+    }
+    else{
+      var { offsetX, offsetY } = event;
+    }
     setIsDrawing(true);
+    if (ctx) {
+      ctx.beginPath();
+      ctx.moveTo(offsetX, offsetY);
+
+      }
+
   }
 
   const drawing = ({ nativeEvent }) => {
-    const { offsetX, offsetY } = nativeEvent;
+    if(nativeEvent.targetTouches){
+      const rect = nativeEvent.target.getBoundingClientRect();
+      var offsetX = (nativeEvent.touches[0].clientX - rect.left) 
+      var offsetY = (nativeEvent.touches[0].clientY - rect.top)
+      
+      
+    }
+    else{
+      var { offsetX, offsetY } = nativeEvent;
+    }
     if (ctx) {
       if (!isDrawing) {
         ctx.beginPath();
@@ -91,12 +116,15 @@ const UserInput = (props) => {
 
   const stopDraw = () => {
     setIsDrawing(false);
+    
     setImage(canvasRef.current.toDataURL())
     props.setInputs({
       ...props.inputs,
       sign: image
     })
   }
+
+
   return (
     <div className="userInput">
       <div className="input-box input-once">
@@ -156,6 +184,9 @@ const UserInput = (props) => {
             onMouseUp={stopDraw}
             onMouseMove={drawing}
             onMouseLeave={stopDraw}
+            onTouchStart={startDraw}
+            onTouchMove={drawing}
+            onTouchEnd={stopDraw}
           ></canvas>
           <Button onClick={clearCanvas}>다시 그리기</Button>
         </div>
