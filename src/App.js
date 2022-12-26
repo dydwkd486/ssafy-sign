@@ -11,7 +11,7 @@ function App() {
       <div className="header">
         <img src={logo} className="App-logo" alt="logo" height="100px" width="100px" />
         <h1>SSAFY 교육지원금 서명 생성기</h1>
-        <p>8기 버전</p>
+        {/* <p>8기 버전</p> */}
         <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdydwkd486.github.io%2Fssafy-sign%2F&count_bg=%231531B2&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98&edge_flat=false"/></a>
       </div>
 
